@@ -13,7 +13,12 @@ func main() {
 	out = bufio.NewWriter(os.Stdout)
 	defer out.Flush()
 
+	var n int
+	fmt.Fscan(in, &n) // read the number of pairs
+
 	var a, b int
-	fmt.Fscan(in, &a, &b)
-	fmt.Fprint(out, a+b)
+	for i := 0; i < n; i++ {
+		fmt.Fscan(in, &a, &b)  // read two integers
+		fmt.Fprintln(out, a+b) // print the sum
+	}
 }
